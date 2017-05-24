@@ -9,6 +9,7 @@ public class TalkServer {
 	public static void main(String[] args) {
 		Socket socket=null;
 		try {
+			//监听10086端口
 			ServerSocket server=new ServerSocket(10086);
 			System.out.println("服务端启动...");
 			socket=server.accept();

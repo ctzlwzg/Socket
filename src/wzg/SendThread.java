@@ -14,12 +14,14 @@ public class SendThread extends Thread{
 	@Override
 	public void run() {
 		try {
+			//创建键盘输入流
 			BufferedReader wt=new BufferedReader(new InputStreamReader(System.in));
+			//创建与对方的输出流
 			PrintWriter out=new PrintWriter(socket.getOutputStream());
 			while(true){
 				String str=wt.readLine();
-				out.println(str);
-				out.flush();
+				out.println(str);//把字符串发给对方程序
+				out.flush();//刷空输出流
 				if(str.equals("end"))	break;
 			}
 			socket.close();

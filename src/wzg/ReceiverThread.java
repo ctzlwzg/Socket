@@ -13,8 +13,10 @@ public class ReceiverThread extends Thread{
 	@Override
 	public void run() {
 		try {
+			//创建输入流
 			BufferedReader in=new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			while(true){
+				//从对方读取一行字符串
 				String str=in.readLine();
 				if(str==null)	break;
 				System.out.println("接收到："+str);
@@ -25,7 +27,7 @@ public class ReceiverThread extends Thread{
 			e.printStackTrace();
 		}finally{
 			System.out.println("谈话结束");
-			System.exit(0);
+			System.exit(0);//结束程序
 		}
 	}
 }
